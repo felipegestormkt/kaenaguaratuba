@@ -1,0 +1,215 @@
+/* ============================================================
+   GALLERY — Galeria do Decorado
+   ============================================================ */
+.gallery {
+  background: var(--kaena-ivory);
+  padding: var(--space-32) 0;
+}
+
+.gallery__eyebrow {
+  color: var(--kaena-terracotta);
+  margin-bottom: var(--space-4);
+}
+
+.gallery__intro {
+  margin-bottom: var(--space-16);
+}
+
+.gallery__title {
+  font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+  color: var(--kaena-charcoal);
+  line-height: 1.1;
+  margin-bottom: var(--space-5);
+}
+
+.gallery__title em {
+  font-style: italic;
+  color: var(--kaena-terracotta);
+}
+
+.gallery__sub {
+  font-size: var(--text-lg);
+  color: var(--kaena-gray);
+  font-weight: 300;
+}
+
+/* Mosaico */
+.gallery__mosaic {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 300px);
+  gap: var(--space-2);
+}
+
+.gallery__item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: #2a2520;
+  border: none;
+  padding: 0;
+}
+
+.gallery__item--large {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery__item:hover .gallery__img {
+  transform: scale(1.05);
+}
+
+.gallery__item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(14,12,8,0.7) 0%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: var(--space-5);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.gallery__item:hover .gallery__item-overlay {
+  opacity: 1;
+}
+
+.gallery__item-label {
+  color: var(--kaena-sand-light);
+  font-size: 0.65rem;
+  margin-bottom: var(--space-2);
+}
+
+.gallery__item-icon {
+  color: var(--kaena-white);
+  opacity: 0.7;
+}
+
+/* Lightbox */
+.gallery__lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(14,12,8,0.96);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lbFadeIn 0.25s ease;
+}
+
+@keyframes lbFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.gallery__lb-close {
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+  color: var(--kaena-cream);
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+}
+
+.gallery__lb-close:hover {
+  opacity: 1;
+}
+
+.gallery__lb-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80vw;
+  max-height: 85vh;
+}
+
+.gallery__lb-img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  animation: imgFadeIn 0.3s ease;
+}
+
+.gallery__lb-caption {
+  color: var(--kaena-sand);
+  margin-top: var(--space-4);
+  font-size: 0.65rem;
+}
+
+.gallery__lb-counter {
+  color: rgba(250,246,240,0.35);
+  font-size: var(--text-xs);
+  margin-top: var(--space-2);
+  letter-spacing: 0.1em;
+}
+
+.gallery__lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--kaena-cream);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: var(--space-4);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery__lb-nav:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.gallery__lb-nav--prev { left: var(--space-6); }
+.gallery__lb-nav--next { right: var(--space-6); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .gallery__mosaic {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 250px);
+  }
+
+  .gallery__item--large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery__mosaic {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 220px);
+    gap: var(--space-1);
+  }
+
+  .gallery__item--large {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .gallery__lb-nav {
+    display: none;
+  }
+
+  .gallery__lb-content {
+    max-width: 95vw;
+  }
+}

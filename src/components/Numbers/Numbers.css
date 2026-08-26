@@ -1,0 +1,209 @@
+/* ============================================================
+   NUMBERS — Manifesto + +3.000 m² hero + 3 stats
+   ============================================================ */
+.numbers {
+  position: relative;
+  background: var(--kaena-dark);
+  padding: var(--space-32) 0 0;
+  overflow: hidden;
+}
+
+.numbers__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  padding-bottom: var(--space-24);
+}
+
+/* ── Manifesto ─────────────────────────────────────── */
+.numbers__eyebrow {
+  color: var(--kaena-sand);
+  margin-bottom: var(--space-4);
+}
+
+.numbers__manifesto {
+  max-width: 640px;
+}
+
+.numbers__title {
+  font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+  color: var(--kaena-cream);
+  line-height: 1.1;
+}
+
+/* ── Hero Stat: +3.000 m² ─────────────────────────── */
+.numbers__hero-stat {
+  width: 100%;
+  border: 1px solid rgba(200, 169, 126, 0.15);
+  background: linear-gradient(135deg, rgba(192, 88, 42, 0.07) 0%, rgba(200, 169, 126, 0.04) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* brilho sutil no canto */
+.numbers__hero-stat::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(192, 88, 42, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.numbers__hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  padding: var(--space-10) var(--space-12);
+  flex-wrap: wrap;
+}
+
+.numbers__hero-value {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  line-height: 1;
+  font-size: clamp(5rem, 10vw, 9rem);
+  color: var(--kaena-sand-light);
+}
+
+.numbers__hero-prefix {
+  font-size: 0.45em;
+  color: var(--kaena-terracotta);
+  align-self: flex-start;
+  padding-top: 0.2em;
+}
+
+.numbers__hero-suffix {
+  font-size: 0.35em;
+  color: var(--kaena-sand);
+  align-self: flex-end;
+  padding-bottom: 0.15em;
+}
+
+.numbers__hero-text {
+  text-align: right;
+}
+
+.numbers__hero-label {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-xl), 2.5vw, var(--text-3xl));
+  font-weight: 300;
+  color: var(--kaena-cream);
+  font-style: italic;
+  margin-bottom: var(--space-2);
+}
+
+.numbers__hero-sublabel {
+  color: rgba(200, 169, 126, 0.5);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+}
+
+.numbers__hero-line {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(192, 88, 42, 0.4) 0%, rgba(200, 169, 126, 0.15) 50%, transparent 100%);
+}
+
+/* ── Stats secundárias: 3 colunas ─────────────────── */
+.numbers__secondary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(200, 169, 126, 0.1);
+  border: 1px solid rgba(200, 169, 126, 0.1);
+}
+
+.numbers__secondary-stat {
+  background: var(--kaena-dark);
+  padding: var(--space-10) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transition: background var(--transition-base);
+}
+
+.numbers__secondary-stat:hover {
+  background: rgba(200, 169, 126, 0.04);
+}
+
+.numbers__secondary-value {
+  font-size: clamp(var(--text-5xl), 6vw, var(--text-8xl));
+  color: var(--kaena-white);
+  line-height: 1;
+}
+
+.numbers__secondary-label {
+  font-size: var(--text-base);
+  color: var(--kaena-cream);
+  font-weight: 300;
+}
+
+.numbers__secondary-sublabel {
+  color: rgba(200, 169, 126, 0.45);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+}
+
+/* ── Onda de transição ─────────────────────────────── */
+.numbers__wave {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.numbers__wave svg {
+  width: 100%;
+  display: block;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .numbers__hero-inner {
+    padding: var(--space-8) var(--space-8);
+  }
+
+  .numbers__hero-text {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .numbers {
+    padding: var(--space-20) 0 0;
+  }
+
+  .numbers__secondary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .numbers__secondary-stat {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .numbers__hero-inner {
+    padding: var(--space-8) var(--space-6);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .numbers__hero-text {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .numbers__secondary-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .numbers__secondary-stat:last-child {
+    grid-column: 1 / -1;
+  }
+}

@@ -1,0 +1,206 @@
+/* ============================================================
+   NEW GUARATUBA — Storytelling da transformação da cidade
+   ============================================================ */
+.new-gtu {
+  position: relative;
+  background: var(--kaena-charcoal);
+  padding: var(--space-32) 0;
+  overflow: hidden;
+}
+
+/* Fundo */
+.new-gtu__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.new-gtu__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.15;
+}
+
+.new-gtu__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--kaena-charcoal) 0%, rgba(28,25,16,0.85) 50%, var(--kaena-charcoal) 100%);
+}
+
+.new-gtu__content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.new-gtu__eyebrow {
+  color: var(--kaena-sand);
+  margin-bottom: var(--space-5);
+}
+
+.new-gtu__header {
+  text-align: center;
+  margin-bottom: var(--space-20);
+}
+
+.new-gtu__title {
+  font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+  color: var(--kaena-white);
+  line-height: 1.1;
+  margin-bottom: var(--space-5);
+}
+
+.new-gtu__title em {
+  font-style: italic;
+  color: var(--kaena-sand-light);
+}
+
+.new-gtu__sub {
+  font-size: var(--text-lg);
+  color: rgba(250,246,240,0.55);
+  font-weight: 300;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Timeline */
+.new-gtu__timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 720px;
+  margin: 0 auto var(--space-16);
+  position: relative;
+}
+
+/* Linha vertical */
+.new-gtu__timeline::before {
+  content: '';
+  position: absolute;
+  left: 27px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(200,169,126,0.3) 20%, rgba(200,169,126,0.3) 80%, transparent);
+}
+
+.new-gtu__step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: var(--space-5);
+  padding: var(--space-6) 0;
+  align-items: flex-start;
+  position: relative;
+}
+
+.new-gtu__step--highlight {
+  padding: var(--space-8) 0;
+}
+
+.new-gtu__step-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(200,169,126,0.08);
+  border: 1px solid rgba(200,169,126,0.2);
+  color: var(--kaena-sand);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+}
+
+.new-gtu__step-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.new-gtu__step--highlight .new-gtu__step-icon {
+  background: rgba(192,88,42,0.15);
+  border-color: rgba(192,88,42,0.4);
+  color: var(--kaena-terracotta);
+  width: 56px;
+  height: 56px;
+}
+
+.new-gtu__step:hover .new-gtu__step-icon {
+  background: rgba(200,169,126,0.15);
+  border-color: rgba(200,169,126,0.4);
+}
+
+.new-gtu__step-line {
+  display: none; /* usado apenas para acessibilidade, linha real é pseudo-element */
+}
+
+.new-gtu__step-body {
+  padding-top: var(--space-2);
+}
+
+.new-gtu__step-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 400;
+  color: var(--kaena-cream);
+  margin-bottom: var(--space-2);
+  letter-spacing: 0.04em;
+}
+
+.new-gtu__step--highlight .new-gtu__step-title {
+  font-size: var(--text-2xl);
+  color: var(--kaena-sand-light);
+}
+
+.new-gtu__step-text {
+  font-size: var(--text-sm);
+  color: rgba(250,246,240,0.5);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* Frase de fechamento */
+.new-gtu__closing {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-2xl), 3vw, var(--text-4xl));
+  font-weight: 300;
+  color: rgba(250,246,240,0.5);
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.new-gtu__closing em {
+  font-style: italic;
+  color: var(--kaena-sand-light);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 640px) {
+  .new-gtu {
+    padding: var(--space-20) 0;
+  }
+
+  .new-gtu__timeline::before {
+    left: 23px;
+  }
+
+  .new-gtu__step {
+    grid-template-columns: 48px 1fr;
+    gap: var(--space-4);
+  }
+
+  .new-gtu__step-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .new-gtu__step-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}

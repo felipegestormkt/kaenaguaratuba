@@ -1,0 +1,202 @@
+/* ============================================================
+   HEADER
+   ============================================================ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0;
+  transition: background var(--transition-slow), backdrop-filter var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.header--scrolled {
+  background: rgba(14, 12, 8, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(200, 169, 126, 0.15);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  gap: var(--space-6);
+}
+
+/* Logo */
+.header__logo {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  line-height: 1;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header__logo-img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: opacity var(--transition-base);
+  max-width: 140px;
+}
+
+.header__logo-img:hover {
+  opacity: 0.85;
+}
+
+/* Nav desktop */
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex: 1;
+  justify-content: center;
+}
+
+.header__nav-link {
+  font-size: var(--text-xs);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 240, 0.7);
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--kaena-sand);
+  transform: scaleX(0);
+  transition: transform var(--transition-base);
+  transform-origin: left;
+}
+
+.header__nav-link:hover {
+  color: var(--kaena-sand-light);
+}
+
+.header__nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* CTA header */
+.header__cta {
+  flex-shrink: 0;
+  font-size: var(--text-xs) !important;
+  padding: var(--space-3) var(--space-5) !important;
+}
+
+/* Hamburger */
+.header__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.header__hamburger span {
+  display: block;
+  height: 1px;
+  background: var(--kaena-sand-light);
+  transition: all var(--transition-base);
+}
+
+.header__hamburger span:nth-child(1) { width: 28px; }
+.header__hamburger span:nth-child(2) { width: 20px; }
+.header__hamburger span:nth-child(3) { width: 24px; }
+
+.header__hamburger.open span:nth-child(1) {
+  width: 24px;
+  transform: translateY(6px) rotate(45deg);
+}
+.header__hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.header__hamburger.open span:nth-child(3) {
+  width: 24px;
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile menu */
+.header__mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 12, 8, 0.98);
+  z-index: 999;
+  padding-top: var(--header-height);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-slow);
+}
+
+.header__mobile-menu.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.header__mobile-menu nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  height: 100%;
+  padding-bottom: var(--space-20);
+}
+
+.header__mobile-link {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--kaena-cream);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.header__mobile-link:hover {
+  color: var(--kaena-sand);
+}
+
+.header__mobile-cta {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm) !important;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__cta {
+    display: none;
+  }
+
+  .header__hamburger {
+    display: flex;
+  }
+
+  .header__mobile-menu {
+    display: block;
+  }
+}
