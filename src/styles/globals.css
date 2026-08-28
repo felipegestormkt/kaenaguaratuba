@@ -144,10 +144,14 @@ input, select, textarea {
    ============================================================ */
 
 /* Container */
-.container {
+.container,
+.container--wide {
   width: 100%;
-  max-width: var(--content-width);
   margin: 0 auto;
+}
+
+.container {
+  max-width: var(--content-width);
   padding: 0 var(--space-6);
 }
 
