@@ -71,7 +71,7 @@ export default function NewGuaratuba() {
           Caminho sugerido: /images/guaratuba-aerial.jpg
         */}
         <img
-          src="/images/guaratuba-aerial.jpg"
+          src="./images/guaratuba-aerial.jpg"
           alt=""
           loading="lazy"
           className="new-gtu__bg-img"

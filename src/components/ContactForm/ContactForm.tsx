@@ -140,7 +140,7 @@ export default function ContactForm() {
                 ⚡ FOTO: Substitua por /images/corretor-cleverson.jpg
               */}
               <img
-                src="/images/corretor-cleverson.jpg"
+                src="./images/corretor-cleverson.jpg"
                 alt="Cleverson de Arcanjo — Corretor de Imóveis KAENA"
                 loading="lazy"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}

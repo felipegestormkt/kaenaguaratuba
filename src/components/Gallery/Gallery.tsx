@@ -8,42 +8,42 @@ import './Gallery.css';
 const photos = [
   {
     id: 'g1',
-    src: '/images/decorado-sala-principal.jpg',
+    src: './images/decorado-sala-principal.jpg',
     alt: 'Sala de estar — Apartamento decorado KAENA Guaratuba',
     label: 'Sala de Estar',
     size: 'large',  // ocupa espaço maior no mosaic
   },
   {
     id: 'g2',
-    src: '/images/decorado-suite.jpg',
+    src: './images/decorado-suite.jpg',
     alt: 'Suíte — Apartamento decorado KAENA Guaratuba',
     label: 'Suíte',
     size: 'normal',
   },
   {
     id: 'g3',
-    src: '/images/decorado-cozinha.jpg',
+    src: './images/decorado-cozinha.jpg',
     alt: 'Cozinha integrada — Apartamento decorado KAENA Guaratuba',
     label: 'Cozinha',
     size: 'normal',
   },
   {
     id: 'g4',
-    src: '/images/decorado-sacada.jpg',
+    src: './images/decorado-sacada.jpg',
     alt: 'Sacada com churrasqueira — Apartamento decorado KAENA Guaratuba',
     label: 'Sacada',
     size: 'normal',
   },
   {
     id: 'g5',
-    src: '/images/decorado-quarto.jpg',
+    src: './images/decorado-quarto.jpg',
     alt: 'Quarto — Apartamento decorado KAENA Guaratuba',
     label: 'Quarto',
     size: 'normal',
   },
   {
     id: 'g6',
-    src: '/images/decorado-banheiro.jpg',
+    src: './images/decorado-banheiro.jpg',
     alt: 'Banheiro — Apartamento decorado KAENA Guaratuba',
     label: 'Banheiro',
     size: 'normal',

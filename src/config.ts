@@ -61,7 +61,7 @@ export const CONFIG = {
     title: 'KAENA Guaratuba | Condomínio Clube em Guaratuba PR',
     description: 'O primeiro grande condomínio clube de Guaratuba. Apartamentos de 2 e 3 quartos com mais de 3.000 m² de lazer, piscina de borda infinita, beach tennis e muito mais. Conheça o KAENA.',
     canonical: 'https://kaenaguaratuba.com.br', // Altere para o domínio real
-    ogImage: '/images/og-kaena.jpg',
+    ogImage: './images/og-kaena.jpg',
   },
 } as const;
 

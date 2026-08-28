@@ -37,7 +37,7 @@ export default function Hero() {
           Dimensões mínimas: 1920x1080px
         */}
         <img
-          src="/images/hero-kaena.jpg"
+          src="./images/hero-kaena.jpg"
           alt="KAENA Guaratuba — Vista das torres ao pôr do sol"
           className="hero__bg-img"
           loading="eager"

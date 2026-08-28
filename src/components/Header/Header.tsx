@@ -38,7 +38,7 @@ export default function Header() {
           aria-label="KAENA Guaratuba - Início"
         >
           <img
-            src={scrolled ? '/images/logo-kaena-dark-web.png' : '/images/logo-kaena-web.png'}
+            src={scrolled ? './images/logo-kaena-dark-web.png' : './images/logo-kaena-web.png'}
             alt="KAENA Guaratuba"
             className="header__logo-img"
             width={333}

@@ -14,7 +14,7 @@ const timeSlots = [
     icon: '◌',
     spaces: ['Academia Completa', 'Área de Academia Externa', 'Piscina Coberta Aquecida', 'Sauna'],
     headline: 'Comece o dia do seu jeito.',
-    image: '/images/leisure-manha.jpg',
+    image: './images/leisure-manha.jpg',
     imageLabel: 'Academia · Piscina Coberta — KAENA',
   },
   {
@@ -23,7 +23,7 @@ const timeSlots = [
     icon: '◑',
     spaces: ['Quadra de Beach Tennis', 'Quadra Poliesportiva', 'Piscina Externa', 'Piscina Infantil', 'Playground · Espaço Kids'],
     headline: 'Tarde de sol e movimento.',
-    image: '/images/leisure-tarde.jpg',
+    image: './images/leisure-tarde.jpg',
     imageLabel: 'Beach Tennis · Piscina Externa — KAENA',
   },
   {
@@ -32,7 +32,7 @@ const timeSlots = [
     icon: '◕',
     spaces: ['Piscina de Borda Infinita', 'Bar Molhado', 'Spa', 'Prainha'],
     headline: 'O horizonte como cenário.',
-    image: '/images/leisure-fim-tarde.jpg',
+    image: './images/leisure-fim-tarde.jpg',
     imageLabel: 'Piscina de Borda Infinita — KAENA',
   },
   {
@@ -41,7 +41,7 @@ const timeSlots = [
     icon: '●',
     spaces: ['Espaços Gourmet', 'Salões de Festas', 'Sala de Jogos', 'Coworking', 'Áreas de Convivência'],
     headline: 'Noites que valem a semana.',
-    image: '/images/leisure-noite.jpg',
+    image: './images/leisure-noite.jpg',
     imageLabel: 'Espaço Gourmet · Convivência — KAENA',
   },
 ];
